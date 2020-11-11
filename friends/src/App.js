@@ -14,15 +14,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   const logout = () => {
-    axiosWithAuth()
-      .post("/logout")
-      .then(res=>{
-        localStorage.removeItem("token");
-        setIsLoading(false);
-      })
-      .catch(err=>{
-        console.log(err);
-      })
+    localStorage.removeItem("token");
+    setIsLoading(false);
   };
 
   return (
